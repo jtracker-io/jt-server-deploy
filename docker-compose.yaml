@@ -2,7 +2,6 @@ version: "2"
 services:
   nginx:
     image: nginx:stable-alpine
-    container_name: nginx
     volumes:
     - ./nginx/conf.d:/etc/nginx/conf.d:ro
     - ./nginx/html:/usr/share/nginx/html:ro
