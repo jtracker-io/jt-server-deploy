@@ -1,0 +1,60 @@
+version: "2"
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    volumes:
+    - ./nginx/conf.d:/etc/nginx/conf.d:ro
+    - ./nginx/html:/usr/share/nginx/html:ro
+    - ./nginx/log:/var/log/nginx/
+    ports:
+    - "8001:80"
+
+  jt-ams:
+    image: quay.io/junjun_zhang/jt-ams
+    environment:
+    - ETCD_HOST=etcd
+    command:
+    - python3
+    - /srv/jt-ams/app.py
+    ports:
+    - 12012:12012
+
+  jt-wrs:
+    image: quay.io/junjun_zhang/jt-wrs
+    environment:
+    - ETCD_HOST=etcd
+    - AMS_HOST=jt-ams
+    command:
+    - python3
+    - /srv/jt-wrs/app.py
+    ports:
+    - 12015:12015
+
+  jt-jess:
+    image: quay.io/junjun_zhang/jt-jess
+    environment:
+    - ETCD_HOST=etcd
+    - AMS_HOST=jt-ams
+    - WRS_HOST=jt-wrs
+    command:
+    - python3
+    - /srv/jt-jess/app.py
+    ports:
+    - 12018:12018
+
+  etcd:
+    image: quay.io/coreos/etcd:v3.3
+    environment:
+    - ETCD_DATA_DIR=/etcd-data
+    command:
+    - etcd
+    - --name=etcd0
+    - --advertise-client-urls=http://etcd:2379
+    - --listen-client-urls=http://0.0.0.0:2379
+    - --initial-advertise-peer-urls=http://etcd:2380
+    - --initial-cluster-state=new
+    ports:
+    - 2379:2379
+    volumes:
+    - ./etcd-data:/etcd-data
