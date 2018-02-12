@@ -7,7 +7,7 @@ and NGINX as reverse proxy.
 
 Please follow Docker Documentation (https://docs.docker.com/) to install Docker and Docker Compose.
 
-## Clone the this repository
+## Clone this repository
 
 ```
 $ git clone https://github.com/jthub/jt-server-deploy.git
