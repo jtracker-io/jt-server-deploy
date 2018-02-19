@@ -10,7 +10,7 @@ services:
     - "8001:80"
 
   jt-ams:
-    image: quay.io/junjun_zhang/jt-ams
+    image: quay.io/junjun_zhang/jt-ams:0.2.0a7
     environment:
     - ETCD_HOST=etcd
     command:
@@ -20,7 +20,7 @@ services:
     - 12012:12012
 
   jt-wrs:
-    image: quay.io/junjun_zhang/jt-wrs
+    image: quay.io/junjun_zhang/jt-wrs:0.2.0a7
     environment:
     - ETCD_HOST=etcd
     - AMS_HOST=jt-ams
@@ -31,7 +31,7 @@ services:
     - 12015:12015
 
   jt-jess:
-    image: quay.io/junjun_zhang/jt-jess
+    image: quay.io/junjun_zhang/jt-jess:0.2.0a7
     environment:
     - ETCD_HOST=etcd
     - AMS_HOST=jt-ams
