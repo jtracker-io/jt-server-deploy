@@ -44,9 +44,12 @@ Please replace `127.0.0.1` with the correct IP of your server.
 
 With that you should be able to create your own account using JT-CLI tool:
 ```
-$ jt user signup -u user1
-$ jt user login -u user1
+$ jt user signup -u user2
+$ jt user login -u user2
 ```
+You may use the pre-created user account `user1` if you prefer.
+
+Note that authentication has not been implemented yet.
 
 Now, you should be able to complete a quick tutorial using your own JTracker server.
 Start from here: https://github.com/jthub/jt-cli#register-a-jt-workflow-under-your-account
