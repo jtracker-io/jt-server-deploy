@@ -10,7 +10,7 @@ Please follow Docker Documentation (https://docs.docker.com/) to install Docker 
 ## Clone this repository
 
 ```
-$ git clone https://github.com/jthub/jt-server-deploy.git
+$ git clone https://github.com/jtracker-io/jt-server-deploy.git
 ```
 
 ## Fire up all JTracker Services
@@ -30,7 +30,7 @@ If you run this on local computer, Swagger UI of the services will be available 
 Otherwise, replace `localhost` with the IP of the server.
 
 ## Install and config JT-CLI to talk to the JTracker Services
-Please follow instruction here to install JT-CLI: https://github.com/jthub/jt-cli.
+Please follow instruction here to install JT-CLI: https://github.com/jtracker-io/jt-cli.
 
 After installation of JT-CLI, you will need to config it so that it talks to the services you set up and run earlier.
 
@@ -52,4 +52,4 @@ You may use the pre-created user account `user1` if you prefer.
 Note that authentication has not been implemented yet.
 
 Now, you should be able to complete a quick tutorial using your own JTracker server.
-Start from here: https://github.com/jthub/jt-cli#register-a-jt-workflow-under-your-account
+Start from here: https://github.com/jtracker-io/jt-cli#register-a-jt-workflow-under-your-account
