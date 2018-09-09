@@ -1,7 +1,7 @@
 # Deploy JTracker Services using Docker Compose
 
-Using Docker Compose is the easiest way to bring up all Tracker services. It also deploys the dependent `etcd` backend
-and NGINX as reverse proxy.
+Using Docker Compose is the easiest way to bring up all JTracker services. It also deploys the dependent `etcd` backend
+and NGINX as a reverse proxy.
 
 ## Prerequisites
 
