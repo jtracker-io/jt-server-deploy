@@ -26,7 +26,7 @@ services:
     - etcd
 
   jt-wrs:
-    image: quay.io/jtracker/jt-wrs:0.2.0a11
+    image: quay.io/jtracker/jt-wrs:0.2.0a12
     environment:
     - ETCD_HOST=etcd
     - AMS_HOST=jt-ams
