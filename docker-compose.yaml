@@ -14,7 +14,7 @@ services:
     - jt-jess
 
   jt-ams:
-    image: quay.io/jtracker/jt-ams:0.2.0a9
+    image: quay.io/jtracker/jt-ams:0.2.0a10
     environment:
     - ETCD_HOST=etcd
     command:
